@@ -1,0 +1,13 @@
+[package]
+name = "{{PROJECT}}"
+version = "0.0.1"
+edition = "2021"
+authors = ["{{AUTHOR}}"]
+
+[profile.release]
+opt-level = 3
+panic = "abort"
+strip = "symbols"
+lto = true
+codegen-units = 1
+rpath = true
