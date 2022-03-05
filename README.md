@@ -10,6 +10,6 @@ It should be possible to also use Zig's `cc` but only failed attempts so far
 
 Aside from that, the `cargo.toml` flags are optimized for binary size mostly, but they require the nightly toolchain and `std` is enabled and built from `nightly-x86_64-unknown-linux-gnu` (had to go bump the used `libc` version to `217` or later as it introduces a patch for missing `SYS` constants (haven't figured patches yet)).
 
-Besides that, to import your executable in-game, you can add a File Import/Export Card to your computer and use `import.lua`, be mindful that the transfer speeds are very slow (~1kB/s)
+Besides that, to import your executable in-game, you can add a File Import/Export Card to your computer and use `import.lua`, be mindful that the transfer speeds are very slow (~1kB/s) (and a Rust rewrite is 25x faster)
 
 Requires Rust 1.59 (due to the `strip` setting)
