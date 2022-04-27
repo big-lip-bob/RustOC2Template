@@ -1,0 +1,18 @@
+[package]
+name = "nothing"
+version = "0.0.1"
+edition = "2021"
+authors = ["nobody"]
+
+[profile.dev]
+panic = "abort" # unwind is unavailable
+strip = "symbols" # greatly reduces binary size
+
+[profile.release]
+# inherits = "release"
+opt-level = 3
+panic = "abort"
+strip = "symbols"
+lto = true
+codegen-units = 1
+rpath = true

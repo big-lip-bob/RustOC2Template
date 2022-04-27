@@ -7,4 +7,4 @@ target = "riscv64gc-unknown-linux-musl"
 target-dir = "./../target"
 
 [target."riscv64gc-unknown-linux-musl"]
-rustflags = ["-C", "linker=./../toolchains/riscv64-lp64d-musl-bleeding-edge/bin/riscv64-buildroot-linux-musl-cc"]
+rustflags = ["-C", "linker=./../toolchains/riscv64-lp64d-musl/bin/riscv64-buildroot-linux-musl-cc"]
