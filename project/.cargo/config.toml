@@ -7,4 +7,8 @@ target = "riscv64gc-unknown-linux-musl"
 target-dir = "./../target"
 
 [target."riscv64gc-unknown-linux-musl"]
-rustflags = ["-C", "linker=./../toolchains/riscv64-lp64d-musl/bin/riscv64-buildroot-linux-musl-cc"]
+rustflags = [
+    "-C", "linker=./../toolchains/riscv64-lp64d-musl/bin/riscv64-buildroot-linux-musl-cc",
+    "-C", "link-args=-lc", # i have no god forsaken idea what this does
+    "-C", "target-feature=-crt-static" # Avoid linking the C Runtime (OC2's Linux image provides MUSL LibC)
+]
