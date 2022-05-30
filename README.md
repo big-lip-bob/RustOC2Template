@@ -16,10 +16,15 @@ thus its the only profile you should use (and you better as it has symbol stripp
 
 ## Reducing Binary Size
 Avoiding `std` (and especially any `fmt`) massively helps get everything down but that's often not possible or maintainable.
+`#![no_std]` can help in extreme cases altough its so versatile (and supported within the Linux image) that getting around may be difficult.
+
 You should instead favour Dynamic dispatching, works well to reduce the binary size even further
 Dynamic shared libraries are another option (`libloading` and our beloved `dlopen`) but
+
 I am still figuring out how to make shared libraries in Rust and i do plan making some wrappers for my OC2 libraries to work with that
 aswel as extracting the Rust runtime (if there is one) into its own shared library.
+
+Relying on very big crates that heavely rely on generics and code generation such as `serde` and `clap` might also hurt binary size hence dynamic dispatching suggestions.
 
 Besides that, to import your executable in-game, you can add a File Import/Export Card to your computer and use `import.lua`,
 be mindful that the transfer speeds are very slow (~1kB/s) (and a Rust rewrite is 25x faster)
