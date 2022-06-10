@@ -9,6 +9,7 @@ Be sure to run `relocate-sdk.sh`, and use the `buildroot` variant of the linker 
 
 It should be possible to also use Zig's `cc`  as its cross-platform by design,
 but i sadly haven't had time to look into Zig and its amazing funsies
+See [cargo-zigbuild](https://github.com/messense/cargo-zigbuild) and the blogpost about [Zig's linker in Rust](https://actually.fyi/posts/zig-makes-rust-cross-compilation-just-work)
 
 Aside from that, the `Cargo.toml` flags are optimized for binary size mostly, but they require the nightly toolchain and `std` is built from `nightly-x86_64-unknown-linux-gnu`.
 The `release` profile has been tweaked to abort (unwinding seems unavailable (the linker is confused))
